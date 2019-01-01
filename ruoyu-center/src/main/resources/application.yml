@@ -1,0 +1,20 @@
+server:
+  port: 9999
+  
+spring: 
+  application:
+    name: eurka-server
+  security:
+    user:
+      name: rain
+      password: 123456
+    
+eureka:
+  instance:
+    hostname: ruoyu-mall
+  client:
+    #通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
