@@ -9,6 +9,5 @@ public class RuoyuSsoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RuoyuSsoApplication.class, args);
 	}
-
 }
 

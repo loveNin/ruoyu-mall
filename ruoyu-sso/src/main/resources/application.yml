@@ -1,0 +1,62 @@
+server:
+  port:  8888
+logging: 
+  config: classpath:logback-spring.xml
+
+#localhost
+spring:
+  datasource: 
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:9999/rain?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      query-timeout: 6000
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
+      max-wait: 60000
+      pool-prepared-statements: true
+
+  #Hibernate
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming: 
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      generate_statistics: false
+      format_sql: true
+      
+  #redis config
+  redis:
+    password: 123456
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+    
+  #mail config
+  mail:
+    host: smtp.qq.com
+    username: 1163626320@qq.com
+    password: 123456
+    properties: 
+      mail: 
+        smtp: 
+          auth: true
+          starttls: 
+            enable: true
+            required: true
+    
+security:
+  basic:
+    enabled: false
