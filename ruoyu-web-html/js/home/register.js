@@ -45,7 +45,8 @@ function registerByMail(){
 			contentType : "application/json;charset=utf-8",
 			success : function(result) {
 				if(result.code == base_success_code){
-					//window.location.href = 'login.html';
+					alert("注册成功，请登录！");
+					window.location.href = 'login.html';
 				}else{
 					$("#message-mail").html(result.msg);
 				}
@@ -183,7 +184,8 @@ function registerByMobile(){
 			contentType : "application/json;charset=utf-8",
 			success : function(result) {
 				if(result.code == base_success_code){
-					//window.location.href = 'login.html';
+					alert("注册成功，请登录！");
+					window.location.href = 'login.html';
 				}else{
 					$("#message-mobile").html(result.msg);
 				}

@@ -27,7 +27,7 @@ function login(){
 		success : function(result) {
 			if(result.code == base_success_code){
 				document.cookie = result.token;
-				window.location.href = 'home.html';
+				window.location.href = "home/home.html';
 			}else{
 				$("#message-propmt").html(result.msg);
 				$("#message-propmt").css("visibility", "visible");
